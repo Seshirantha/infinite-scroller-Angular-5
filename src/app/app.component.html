@@ -1,0 +1,30 @@
+<!-- <ul id="infinite-scroller"
+  appInfiniteScroller
+  scrollPerecnt="70"
+  immediateCallback="true"
+  [scrollCallback]="scrollCallback"
+  >
+    <li *ngFor="let item of user">{{item.id}}</li>
+</ul> -->
+<div id="infinite-scroller" appInfiniteScroller scrollPerecnt="10" immediateCallback="true" [scrollCallback]="scrollCallback">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" >
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Student No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td >{{user.id}}</td>
+        <td class="r">{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email}}</td>
+        <td>{{user.student_no}}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>
